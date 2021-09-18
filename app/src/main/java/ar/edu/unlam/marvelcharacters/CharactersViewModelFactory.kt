@@ -20,7 +20,7 @@ class CharactersViewModelFactory : ViewModelProvider.Factory {
 
         val apiClient = retrofit.create(MarvelCharactersClient::class.java)
 
-        val charactersApi = RetrofitCharactersApi(apiClient)
+        val charactersApi = RetrofitCharactersRepository(apiClient)
         val charactersService = CharactersService(charactersApi)
         return CharactersViewModel(charactersService) as T
     }

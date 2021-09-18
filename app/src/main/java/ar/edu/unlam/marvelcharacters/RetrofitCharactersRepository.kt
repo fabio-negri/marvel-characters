@@ -1,6 +1,6 @@
 package ar.edu.unlam.marvelcharacters
 
-class RetrofitCharactersApi(private val apiClient: MarvelCharactersClient) : CharactersApi {
+class RetrofitCharactersRepository(private val apiClient: MarvelCharactersClient) : CharactersRepository {
 
     override suspend fun getCharacters(timestamp: Long, md5: String): List<Character> {
         return apiClient.getAllCharacters(timestamp, md5).toModel()

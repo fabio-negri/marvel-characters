@@ -1,6 +1,6 @@
 package ar.edu.unlam.marvelcharacters
 
-interface CharactersApi {
+interface CharactersRepository {
 
     suspend fun getCharacters(timestamp: Long, md5: String): List<Character>
 

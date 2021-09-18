@@ -4,12 +4,12 @@ import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 
 class CharactersService(
-    private val charactersApi: CharactersApi
+    private val charactersRepository: CharactersRepository
 ) {
 
     suspend fun getCharacters(): List<Character> {
         val timestamp = System.currentTimeMillis()
-        return charactersApi.getCharacters(
+        return charactersRepository.getCharacters(
             timestamp,
             md5(timestamp.toString() + BuildConfig.PRIVATE_KEY + BuildConfig.PUBLIC_KEY)
         )
