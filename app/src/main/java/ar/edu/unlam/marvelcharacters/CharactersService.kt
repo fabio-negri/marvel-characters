@@ -11,7 +11,7 @@ class CharactersService(
         val timestamp = System.currentTimeMillis()
         return charactersRepository.getCharacters(
             timestamp,
-            md5(timestamp.toString() + BuildConfig.PRIVATE_KEY + BuildConfig.PUBLIC_KEY)
+            md5(timestamp.toString() + PrivateKey + PublicKey)
         )
     }
 
