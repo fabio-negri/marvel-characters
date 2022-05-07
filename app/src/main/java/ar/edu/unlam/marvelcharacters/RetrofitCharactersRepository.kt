@@ -8,7 +8,12 @@ class RetrofitCharactersRepository(private val apiClient: MarvelCharactersClient
 
     private fun CharactersResponse.toModel(): List<Character> {
         return this.characters.list.map {
-            Character(it.name, it.description, it.thumbnail.toUrl())
+            Character(
+                id = it.id,
+                name = it.name,
+                description = it.description,
+                thumbnailUrl = it.thumbnail.toUrl()
+            )
         }
     }
 }
